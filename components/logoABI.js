@@ -339,6 +339,25 @@ export default function ContractABI() {
    {
       "inputs":[
          {
+            "internalType":"address",
+            "name":"",
+            "type":"address"
+         }
+      ],
+      "name":"claimedByOwner",
+      "outputs":[
+         {
+            "internalType":"uint256",
+            "name":"",
+            "type":"uint256"
+         }
+      ],
+      "stateMutability":"view",
+      "type":"function"
+   },
+   {
+      "inputs":[
+         {
             "internalType":"uint256",
             "name":"tokenId",
             "type":"uint256"
@@ -1169,7 +1188,7 @@ export default function ContractABI() {
                   "type":"uint8"
                }
             ],
-            "internalType":"struct DegenDoodsNFT.WhitelistClaimPass",
+            "internalType":"struct GenericNFTPumpContract.WhitelistClaimPass",
             "name":"whitelistClaimPass",
             "type":"tuple"
          }
