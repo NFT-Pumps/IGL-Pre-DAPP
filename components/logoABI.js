@@ -1188,7 +1188,7 @@ export default function ContractABI() {
                   "type":"uint8"
                }
             ],
-            "internalType":"struct GenericNFTPumpContract.WhitelistClaimPass",
+            "internalType":"struct IGLPresalePresale.WhitelistClaimPass",
             "name":"whitelistClaimPass",
             "type":"tuple"
          }
