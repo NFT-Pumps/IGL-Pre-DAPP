@@ -4,8 +4,8 @@ module.exports = {
   reactStrictMode: false,
   analyticsId: '7vsHWbYwcKpA3lFTng2Qe9iNzE7',
   env: {
-    siteTitle: "IGL Legacy NFT Minting Dapp",
-    contractAddress: "0x4053e1807383A397C0AFdb1b1344E44A7580604A",
+    siteTitle: "IGL Presale NFT Minting Dapp",
+    contractAddress: "0x95ddb4e72AB3661c7dABdF73F1eE47214513a721",
     infuraID: "045e9c65387a4200aa8559c347fa19a4",
     defaultGas: 125000,//75000,
     mintType : "Pre-Sale", //Pre-Sale Public
@@ -15,13 +15,13 @@ module.exports = {
     debug: false,
     network: 'rinkeby',
     chainId: 1337,
-    pageHeader : 'IGL Legacy NFT',
+    pageHeader : 'IGL Presale NFT',
     pageText : 'Utilizing the Game',
     //mintType: "Whitelist",
     blockExplorerURL: 'https://.etherscan.io/',
     www: 'https://iglnft.app/',
     mainWWW: 'https://iglnft.app/',
-    title: 'IGL Legacy NFT',
+    title: 'IGL Presale NFT',
     links : {
       opensea : "https://opensea.io/collection/",
       discord : "https://discord.gg/Egw5QN9hZQ",
