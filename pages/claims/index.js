@@ -85,7 +85,7 @@ export default function Claim() {
 
   let newValue = process.env.mintType == "Public" ? process.env.ethValue : process.env.ethWLValue;
 
-  const whitelist = Whitelist();
+//   const whitelist = Whitelist();
 
   return (
     <div>
