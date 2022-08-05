@@ -31,19 +31,9 @@ export default function ContractABI() {
             "internalType":"string",
             "name":"_hiddenMetadataUri",
             "type":"string"
-         },
-         {
-            "internalType":"address[]",
-            "name":"_payees",
-            "type":"address[]"
-         },
-         {
-            "internalType":"uint256[]",
-            "name":"_shares",
-            "type":"uint256[]"
          }
       ],
-      "stateMutability":"payable",
+      "stateMutability":"nonpayable",
       "type":"constructor"
    },
    {
@@ -101,31 +91,6 @@ export default function ContractABI() {
       "inputs":[
          {
             "indexed":true,
-            "internalType":"contract IERC20",
-            "name":"token",
-            "type":"address"
-         },
-         {
-            "indexed":false,
-            "internalType":"address",
-            "name":"to",
-            "type":"address"
-         },
-         {
-            "indexed":false,
-            "internalType":"uint256",
-            "name":"amount",
-            "type":"uint256"
-         }
-      ],
-      "name":"ERC20PaymentReleased",
-      "type":"event"
-   },
-   {
-      "anonymous":false,
-      "inputs":[
-         {
-            "indexed":true,
             "internalType":"address",
             "name":"previousOwner",
             "type":"address"
@@ -138,63 +103,6 @@ export default function ContractABI() {
          }
       ],
       "name":"OwnershipTransferred",
-      "type":"event"
-   },
-   {
-      "anonymous":false,
-      "inputs":[
-         {
-            "indexed":false,
-            "internalType":"address",
-            "name":"account",
-            "type":"address"
-         },
-         {
-            "indexed":false,
-            "internalType":"uint256",
-            "name":"shares",
-            "type":"uint256"
-         }
-      ],
-      "name":"PayeeAdded",
-      "type":"event"
-   },
-   {
-      "anonymous":false,
-      "inputs":[
-         {
-            "indexed":false,
-            "internalType":"address",
-            "name":"from",
-            "type":"address"
-         },
-         {
-            "indexed":false,
-            "internalType":"uint256",
-            "name":"amount",
-            "type":"uint256"
-         }
-      ],
-      "name":"PaymentReceived",
-      "type":"event"
-   },
-   {
-      "anonymous":false,
-      "inputs":[
-         {
-            "indexed":false,
-            "internalType":"address",
-            "name":"to",
-            "type":"address"
-         },
-         {
-            "indexed":false,
-            "internalType":"uint256",
-            "name":"amount",
-            "type":"uint256"
-         }
-      ],
-      "name":"PaymentReleased",
       "type":"event"
    },
    {
@@ -417,21 +325,6 @@ export default function ContractABI() {
       "inputs":[
          
       ],
-      "name":"maxWhitelistPassMints",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         
-      ],
       "name":"name",
       "outputs":[
          {
@@ -494,40 +387,6 @@ export default function ContractABI() {
    },
    {
       "inputs":[
-         {
-            "internalType":"uint256",
-            "name":"index",
-            "type":"uint256"
-         }
-      ],
-      "name":"payee",
-      "outputs":[
-         {
-            "internalType":"address",
-            "name":"",
-            "type":"address"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         
-      ],
-      "name":"privateMintIsOpen",
-      "outputs":[
-         {
-            "internalType":"bool",
-            "name":"",
-            "type":"bool"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
          
       ],
       "name":"publicMintIsOpen",
@@ -546,84 +405,6 @@ export default function ContractABI() {
          
       ],
       "name":"publicMintMaxLimit",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
-            "internalType":"address payable",
-            "name":"account",
-            "type":"address"
-         }
-      ],
-      "name":"release",
-      "outputs":[
-         
-      ],
-      "stateMutability":"nonpayable",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
-            "internalType":"contract IERC20",
-            "name":"token",
-            "type":"address"
-         },
-         {
-            "internalType":"address",
-            "name":"account",
-            "type":"address"
-         }
-      ],
-      "name":"release",
-      "outputs":[
-         
-      ],
-      "stateMutability":"nonpayable",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
-            "internalType":"contract IERC20",
-            "name":"token",
-            "type":"address"
-         },
-         {
-            "internalType":"address",
-            "name":"account",
-            "type":"address"
-         }
-      ],
-      "name":"released",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
-            "internalType":"address",
-            "name":"account",
-            "type":"address"
-         }
-      ],
-      "name":"released",
       "outputs":[
          {
             "internalType":"uint256",
@@ -768,21 +549,6 @@ export default function ContractABI() {
    {
       "inputs":[
          {
-            "internalType":"uint256",
-            "name":"amount",
-            "type":"uint256"
-         }
-      ],
-      "name":"setFreeMints",
-      "outputs":[
-         
-      ],
-      "stateMutability":"nonpayable",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
             "internalType":"string",
             "name":"_hiddenMetadataUri",
             "type":"string"
@@ -804,27 +570,12 @@ export default function ContractABI() {
          },
          {
             "internalType":"uint256",
-            "name":"newWhitelistTokenPrice",
-            "type":"uint256"
-         },
-         {
-            "internalType":"uint256",
             "name":"setOpenMintLimit",
-            "type":"uint256"
-         },
-         {
-            "internalType":"uint256",
-            "name":"setWhistlistPassMintLimit",
             "type":"uint256"
          },
          {
             "internalType":"bool",
             "name":"setPublicMintState",
-            "type":"bool"
-         },
-         {
-            "internalType":"bool",
-            "name":"setPrivateMintState",
             "type":"bool"
          }
       ],
@@ -913,40 +664,6 @@ export default function ContractABI() {
    {
       "inputs":[
          {
-            "internalType":"uint256",
-            "name":"newprivateMintLimit",
-            "type":"uint256"
-         }
-      ],
-      "name":"setWhitelistTransactionMintLimit",
-      "outputs":[
-         
-      ],
-      "stateMutability":"nonpayable",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
-            "internalType":"address",
-            "name":"account",
-            "type":"address"
-         }
-      ],
-      "name":"shares",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
             "internalType":"bytes4",
             "name":"interfaceId",
             "type":"bytes4"
@@ -1002,17 +719,6 @@ export default function ContractABI() {
       "inputs":[
          
       ],
-      "name":"togglePresaleMint",
-      "outputs":[
-         
-      ],
-      "stateMutability":"nonpayable",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         
-      ],
       "name":"togglePublicMint",
       "outputs":[
          
@@ -1049,55 +755,6 @@ export default function ContractABI() {
             "internalType":"string",
             "name":"",
             "type":"string"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         {
-            "internalType":"contract IERC20",
-            "name":"token",
-            "type":"address"
-         }
-      ],
-      "name":"totalReleased",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         
-      ],
-      "name":"totalReleased",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         
-      ],
-      "name":"totalShares",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
          }
       ],
       "stateMutability":"view",
@@ -1160,78 +817,6 @@ export default function ContractABI() {
    },
    {
       "inputs":[
-         {
-            "internalType":"uint8",
-            "name":"quantity",
-            "type":"uint8"
-         },
-         {
-            "internalType":"uint8",
-            "name":"claimable",
-            "type":"uint8"
-         },
-         {
-            "components":[
-               {
-                  "internalType":"bytes32",
-                  "name":"r",
-                  "type":"bytes32"
-               },
-               {
-                  "internalType":"bytes32",
-                  "name":"s",
-                  "type":"bytes32"
-               },
-               {
-                  "internalType":"uint8",
-                  "name":"v",
-                  "type":"uint8"
-               }
-            ],
-            "internalType":"struct IGLPresalePresale.WhitelistClaimPass",
-            "name":"whitelistClaimPass",
-            "type":"tuple"
-         }
-      ],
-      "name":"whitelistClaimMint",
-      "outputs":[
-         
-      ],
-      "stateMutability":"payable",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         
-      ],
-      "name":"whitelistMintMaxLimit",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
-         
-      ],
-      "name":"whitelistTokenPrice",
-      "outputs":[
-         {
-            "internalType":"uint256",
-            "name":"",
-            "type":"uint256"
-         }
-      ],
-      "stateMutability":"view",
-      "type":"function"
-   },
-   {
-      "inputs":[
          
       ],
       "name":"withdraw",
@@ -1240,10 +825,6 @@ export default function ContractABI() {
       ],
       "stateMutability":"nonpayable",
       "type":"function"
-   },
-   {
-      "stateMutability":"payable",
-      "type":"receive"
    }
 ]
 }
