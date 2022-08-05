@@ -5,7 +5,7 @@ module.exports = {
   analyticsId: '7vsHWbYwcKpA3lFTng2Qe9iNzE7',
   env: {
     siteTitle: "IGL Presale NFT Minting Dapp",
-    contractAddress: "0x95ddb4e72AB3661c7dABdF73F1eE47214513a721",
+    contractAddress: "0x4543a198655E157eD72FB05A65f51EB55D5B086A",
     infuraID: "045e9c65387a4200aa8559c347fa19a4",
     defaultGas: 125000,//75000,
     mintType : "Pre-Sale", //Pre-Sale Public
