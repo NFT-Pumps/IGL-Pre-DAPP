@@ -5,7 +5,7 @@ module.exports = {
   analyticsId: '7vsHWbYwcKpA3lFTng2Qe9iNzE7',
   env: {
     siteTitle: "IGL Presale NFT Minting Dapp",
-    contractAddress: "0x4543a198655E157eD72FB05A65f51EB55D5B086A",
+    contractAddress: "0x284f58081446c89650f205829e3a045Fa33bd16c",
     infuraID: "045e9c65387a4200aa8559c347fa19a4",
     defaultGas: 125000,//75000,
     mintType : "Pre-Sale", //Pre-Sale Public
@@ -26,7 +26,7 @@ module.exports = {
       discord : "https://discord.gg/Egw5QN9hZQ",
       twitter : "https://twitter.com/iglnft"
     },
-    maxMint: 1,
+    maxMint: 3000,
     maxMintCount: 1,
     messagehash: '0x865f293da4a629f00bd8072be6115031c608fa4a13b819fd087811752fc8bb90',
     signatureBytes: '0x4b7715f34823936b045d1e5ca6c295b7f5ecff3d0c158118c71441ed217c3ddb026617ce49dc15781bdb25c8c34ed4a1f4d68df6080f6dd0004511cf05032bf01c',
