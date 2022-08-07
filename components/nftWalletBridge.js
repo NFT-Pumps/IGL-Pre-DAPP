@@ -73,26 +73,27 @@ export default function NFTWalletBridge(e) {
     }
 
     async function getBlockChainData(props) {
+        console.log("Step 1");
         let totalShares = await contract.methods.totalSupply.call();
+        console.log("Step 2");
         let resultTS = await totalShares.call();
         //console.log(`totalShares: ${resultTS}`)
+        console.log("Step 3");
         setnumMinted(resultTS);
 
         let balance2 = await GetBalance();
 
-        await getRevealed();
+        //await getRevealed();
         await getPublicMintStatus();
-        await getPrivateMintStatus();
+        //await getPrivateMintStatus();
         await getBalanceOf({ wallet: connectedWalletAddress });
 
         balance2 = web3.utils.fromWei(balance2, "ether");
         const filtered = connectedWalletAddress.substr(0, 6) + "..." + connectedWalletAddress.substr(connectedWalletAddress.length - 6);
 
-        let isThisAddressOnWhitelist = await CheckIfOnWhitelist(props.mintType, connectedWalletAddress);
-
         setTokenBalance({
             trueBalance: balance2, theBalance: balance2, connectedWalletAddress: connectedWalletAddress, filteredAddress: filtered,
-            isWhiteListed: isThisAddressOnWhitelist
+            isWhiteListed: false
         });
     }
 
@@ -266,34 +267,6 @@ export default function NFTWalletBridge(e) {
                 });
         }
 
-        let isThisAddressOnWhitelist = await CheckIfOnWhitelist(props.mintType, connectedWalletAddress)
-        if (props.mintType == "Pre-Sale" && isThisAddressOnWhitelist) {
-
-            let thisWL = Whitelist();
-
-            let txTransfer1 = await contract.methods
-                .whitelistClaimMint(props.mint, thisWL[connectedWalletAddress].q, thisWL[connectedWalletAddress].whitelistClaimPass)
-                .send({ from: connectedWalletAddress, value: bntokens })
-                .on('transactionHash', function (hash) {
-                    //hashArray = [];
-
-                    hashArray.push({ id: 1, txHash: hash, filteredTxHash: hash.substr(0, 10) + "..." + hash.substr(hash.length - 10) });
-                    setTxs(hashArray);
-                    sethashTx(GetHashes(txs));
-                    //console.log(hash);
-                })
-                .then(function (result) {
-                    setIsWaiting(false);
-                    getBlockChainData(props);
-                    //alert('Transaction success');
-                }).catch(function (e) {
-                    setIsWaiting(false);
-                    setErrorMessage(e.message);
-                    console.log(e);
-                    getBlockChainData(props);
-                });
-        }
-
 
         // let txTransfer = await contract.methods.mint1(Amount).estimateGas()
         // .then(function (estimate) {
@@ -337,50 +310,6 @@ export default function NFTWalletBridge(e) {
                 setErrorMessage(e.message)
                 console.log(e)
             });
-
-        return {};
-    }
-
-    async function togglePresaleMint() {
-
-        if (process.env.debug) {
-            console.log(Amount);
-        }
-
-        //const TotalTokens = 0.075 * Amount;
-
-        contract = new web3.eth.Contract(contractABI, tokenAddress, { from: connectedWalletAddress, gas: 50000 });
-        setIsWaiting(true)
-        setErrorMessage("");
-
-        // const estimation = await erc20.contract.methods.togglePresaleMint();
-
-        // console.log(estimation);
-        try {
-            let txTransfer = await contract.methods
-                .togglePresaleMint()
-                .send({ from: connectedWalletAddress })
-                .on('transactionHash', function (hash) {
-                    //hashArray = [];
-
-                    hashArray.push({ id: 1, txHash: hash, filteredTxHash: hash.substr(0, 10) + "..." + hash.substr(hash.length - 10) });
-                    setTxs(hashArray);
-                    sethashTx(GetHashes(txs));
-                    //console.log(hash);
-                })
-                .then(function (result) {
-                    setIsWaiting(false);
-                    alert('Transaction success');
-                }).catch(function (e) {
-                    alert('Transaction Failed');
-                    setIsWaiting(false)
-                    setErrorMessage(e.message)
-                    console.log(e)
-                });
-        } catch (error) {
-
-        }
-
 
         return {};
     }
@@ -444,16 +373,6 @@ export default function NFTWalletBridge(e) {
 
         let thisResult = await contract.methods.publicMintIsOpen().call();
         setIsPublicMintIsOpen(thisResult);
-
-        return thisResult;
-    }
-
-    async function getPrivateMintStatus() {
-
-        contract = new web3.eth.Contract(contractABI, tokenAddress, { from: connectedWalletAddress, gas: 50000 });
-
-        let thisResult = await contract.methods.privateMintIsOpen().call();
-        setIsPrivateMintIsOpen(thisResult);
 
         return thisResult;
     }
@@ -540,11 +459,6 @@ export default function NFTWalletBridge(e) {
         },
         togglePublicMint: function (props) {
             togglePublicMint(props)
-
-            return false;
-        },
-        togglePresaleMint: function (props) {
-            togglePresaleMint(props)
 
             return false;
         },

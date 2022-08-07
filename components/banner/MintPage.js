@@ -129,10 +129,12 @@ const MintPage = () => {
                         Contract : <strong>{process.env.contractAddress}</strong>
                         <br />
                       </p>
-                      {(process.env.enforceWhitelist == false || currentUseState.xmPower.isWhiteListed == true) ?
+                      {(true) ?
                         <>
-                          <label className="connected">Number to mint (1-{process.env.maxMintCount}):</label>
-                          <div className="">
+                          {/* <label className="connected">Number to mint (1-{process.env.maxMintCount}):</label> */}
+                          <label>Can only mint one per wallet:</label>
+                          <div className=""></div>
+                          {/* <div className="">
                             <div className="input-group">
                               <div className="input-group-prepend">
                                 <button className="btn btn-outline-primary" type="button" onClick={decNum}>-</button>
@@ -144,9 +146,9 @@ const MintPage = () => {
                                 <button className="btn btn-outline-primary" type="button" onClick={incNum}>+</button>
                               </div>
                             </div>
-                          </div>
+                          </div> */}
                           <Link href="">
-                            <a className="btn btn-success m-r-20 btn-md m-t-30 btn-outline-dark " onClick={() => SendMint({ mint: mintNum })}>
+                            <a className="btn btn-success m-r-20 btn-md m-t-30 btn-outline-dark " onClick={() => SendMint({ mint: 1 })}>
                               Mint
                             </a>
                           </Link>
