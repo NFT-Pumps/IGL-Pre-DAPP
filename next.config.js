@@ -24,7 +24,7 @@ module.exports = {
     links : {
       opensea : "https://opensea.io/collection/igl-presale-nft",
       discord : "https://discord.gg/Egw5QN9hZQ",
-      twitter : "https://twitter.com/iglnft"
+      twitter : "https://twitter.com/iglcity"
     },
     maxMint: 3000,
     maxMintCount: 1,
